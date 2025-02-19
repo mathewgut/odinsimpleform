@@ -1,7 +1,7 @@
 @font-face {
     font-family: "Norse";
     src: url(assets/Norse-Bold.otf);
-  }
+}
 
 :root {
     --standard-border-radius: 0.4rem;
@@ -15,7 +15,6 @@
 input {
     appearance: none;
 }
-  
 
 body {
     margin: 0;
@@ -29,6 +28,7 @@ body {
 .page-container {
     display: flex;
     width: 100vw;
+    height: 100vh;
 }
 
 .form-container {
@@ -49,14 +49,39 @@ p+p {
 }
 
 .form-image {
-    width: 50vw;
-    overflow: hidden;
+    width: 40vw;
 }
 
-.form-image img {
+.form-image #cover-image {
     height: 100vh;
+    width: inherit;
+    object-fit: cover;
     margin: 0;
     position: relative;
+}
+
+.odin-overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 1;
+    width: inherit;
+    background-color: rgba(0, 0, 0, 0.549);
+    padding: 0;
+    top: 8rem;
+    height: 10rem;
+}
+
+.odin-overlay img {
+    height: 8rem;
+}
+
+.odin-overlay h2 {
+    font-family: "Norse";
+    font-size: 6rem;
+    color: white;
+    font-weight: 400;
 }
 
 .disclaimer-text{
@@ -78,24 +103,18 @@ form {
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-
     background-color: white;
-
     padding: 1rem 0;
     padding-left: 2rem;
     margin: 1rem 0;
     flex-wrap: wrap;
-
-
     box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
-
 }
 
 input {
     height: 1.5rem;
     border: 0.1rem solid rgb(219, 220, 219);
-    border-radius: var(--standard-border-radius)
-
+    border-radius: var(--standard-border-radius);
 }
 
 input:focus {
@@ -134,7 +153,8 @@ input:user-valid {
 
 input:focus {
     outline: none;
-    border-color: cadetblue;
+    border-color: rgb(93, 163, 232);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
 .button-submit {
@@ -146,6 +166,14 @@ input:focus {
     font-weight: 700;
     color: white;
     background-color: var(--accent-color);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    transition: 0.2s ease-in-out;
+}
+
+.button-submit:hover {
+    color: var(--accent-color);
+    background-color: snow;
+    cursor: pointer;
 }
 
 .create-login-container {
@@ -164,3 +192,6 @@ a {
 a:hover{
     text-decoration: underline;
 }
+
+
+
